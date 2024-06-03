@@ -1,7 +1,7 @@
 name: Build
 
 run-name: ${{ github.actor }} compiling based on CMakeLists.txt
-jn: [push]
+on: [push]
 jobs:
   compile_on_ubuntu:
     runs-on: ubuntu-latest
