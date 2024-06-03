@@ -8,6 +8,14 @@ option(BUILD_EXAMPLES "Build examples" OFF)
 project(print)
 
 add_library(print STATIC ${CMAKE_CURRENT_SOURCE_DIR}/sources/print.cpp)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/formatter_lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/formatter_lib)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/formatter_ex_lib)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/solver_lib)
+include_directories(${CMAKE_CURRRENT_SOURCE_DIR}/solver_lib)
+
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/hello_world_application)
 
 target_include_directories(print PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
