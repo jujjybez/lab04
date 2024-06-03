@@ -1,0 +1,19 @@
+name: Build
+
+run-name: ${{ github.actor }} compiling based on CMakeLists.txt
+jn: [push]
+jobs:
+  compile_on_ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: CMake Action
+        uses: threeal/cmake-action@v1.3.0
+  compile_on_windows:
+    runs-on: windows-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: CMake Actions
+        uses: threeal/cmake-action@v1.3.0
